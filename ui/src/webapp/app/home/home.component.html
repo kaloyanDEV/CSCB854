@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-3">
+       <!-- COULD BE INSERTED IMG-->
+    </div>
+    <div class="col-md-9">
+        <h1 class="display-4">Welcome!</h1>
+
+        <div [ngSwitch]="isAuthenticated()">
+
+            <div class="alert alert-warning" *ngSwitchCase="false">
+                <span>If you want to </span>
+                <a class="alert-link" (click)="login()">sign in</a><span>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").</span>
+            </div>
+            <div class="alert alert-warning" *ngSwitchCase="false">
+                <span>You don't have an account yet?</span>&nbsp;
+                <a class="alert-link" routerLink="register">Register a new account</a>
+            </div>
+        </div>
+
+        <p>
+            If you want to play tech gladiator:
+        </p>
+
+        <ul>
+            <li><a href="https://play.google.com/store/apps/details?id=com.tech.gladiators" target="_blank" rel="noopener">Tech gladiators on Google play store</a></li>
+            <li><a href="http://tech-gladiators.mygamesonline.org/" target="_blank" rel="noopener">temporary homepage</a></li>
+            <li><a href="https://www.facebook.com/Tech-gladiators-210200472894710" target="_blank" rel="noopener">Tech gladiators on Facebook</a></li>
+        </ul>
+
+    </div>
+</div>
