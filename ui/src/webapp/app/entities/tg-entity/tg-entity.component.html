@@ -38,7 +38,8 @@
             </thead>
             <tbody>
             <tr *ngFor="let tGEntity of tGEntities ;trackBy: trackId">
-                <td><a [routerLink]="['/tg-entity', tGEntity.id, 'view' ]">{{tGEntity.id}}</a></td>
+                <!--<td><a [routerLink]="['/tg-entity', tGEntity.id, 'view' ]">{{tGEntity.id}}</a></td>-->
+                <td><a [routerLink]="['/tg-entity', tGEntity._id, 'view' ]">{{tGEntity._id}}</a></td>
                 <td>{{tGEntity.name}}</td>
                 <td>{{tGEntity.description}}</td>
                 <td>{{tGEntity.category}}</td>
