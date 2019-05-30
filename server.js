@@ -7,7 +7,7 @@ var express = require('express'),
   
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/Entitydb'); 
+mongoose.connect('mongodb://localhost/Entitydb', { useNewUrlParser: true }); 
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
