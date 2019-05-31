@@ -15,7 +15,7 @@ export class TGEntityUpdateComponent implements OnInit {
   isSaving: boolean;
 
   editForm = this.fb.group({
-    id: [],
+    _id: [],
     name: [null, [Validators.required, Validators.maxLength(20)]],
     description: [],
     category: [null, [Validators.required]]
@@ -33,7 +33,7 @@ export class TGEntityUpdateComponent implements OnInit {
 
   updateForm(tGEntity: ITGEntity) {
     this.editForm.patchValue({
-      id: tGEntity.id,
+      _id: tGEntity._id,
       name: tGEntity.name,
       description: tGEntity.description,
       category: tGEntity.category
@@ -47,7 +47,7 @@ export class TGEntityUpdateComponent implements OnInit {
   save() {
     this.isSaving = true;
     const tGEntity = this.createFromForm();
-    if (tGEntity.id !== undefined) {
+    if (tGEntity._id !== undefined) {
       this.subscribeToSaveResponse(this.tGEntityService.update(tGEntity));
     } else {
       this.subscribeToSaveResponse(this.tGEntityService.create(tGEntity));
@@ -57,7 +57,7 @@ export class TGEntityUpdateComponent implements OnInit {
   private createFromForm(): ITGEntity {
     const entity = {
       ...new TGEntity(),
-      id: this.editForm.get(['id']).value,
+      _id: this.editForm.get(['_id']).value,
       name: this.editForm.get(['name']).value,
       description: this.editForm.get(['description']).value,
       category: this.editForm.get(['category']).value

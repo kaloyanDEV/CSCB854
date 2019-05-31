@@ -6,12 +6,12 @@ export const enum Category {
 }
 
 export interface ITGEntity {
-  id?: string;
+  _id?: string;
   name?: string;
   description?: string;
   category?: Category;
 }
 
 export class TGEntity implements ITGEntity {
-  constructor(public id?: string, public name?: string, public description?: string, public category?: Category) {}
+  constructor(public _id?: string, public name?: string, public description?: string, public category?: Category) {}
 }
