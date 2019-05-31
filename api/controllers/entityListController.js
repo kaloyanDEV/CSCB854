@@ -33,7 +33,8 @@ exports.read_a_entity = function(req, res) {
 
 
 exports.update_a_entity = function(req, res) {
-  Entity.findOneAndUpdate({_id: req.params.entityId}, req.body, {new: true}, function(err, entity) {
+  //Entity.findOneAndUpdate({_id: req.params.entityId}, req.body, {new: true}, function(err, entity) {
+    Entity.findOneAndUpdate({_id: req.body._id}, req.body, {new: true}, function(err, entity) {
     if (err)
       res.send(err);
     res.json(entity);
