@@ -64,6 +64,7 @@ start
 $ npm start
 ```
 
+http://localhost:9000/ > Entities > Tg Entity
 
 ## clean up
 
